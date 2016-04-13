@@ -7,9 +7,9 @@ function noop() {}
 describe('dispatch-fn', function() {
   it('should return a function which loops commands until one returns', function() {
     var myCmd = sinon.stub().returnsArg(0);
-    const uncalledCmd = sinon.spy();
-    const fn = dispatch(noop, noop, myCmd, uncalledCmd);
-    const result = fn('foo', 'bar');
+    var uncalledCmd = sinon.spy();
+    var fn = dispatch(noop, noop, myCmd, uncalledCmd);
+    var result = fn('foo', 'bar');
 
     assert.equal(result, 'foo');
 
