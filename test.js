@@ -1,12 +1,13 @@
-import assert from 'assert';
-import noop from 'lodash/utility/noop';
-import {spy, stub} from 'sinon';
-import dispatch from '../index';
+var assert = require('assert');
+var sinon = require('sinon');
+var dispatch = require('./index');
 
-describe('dispatch-fn', () => {
-  it('should return a function which loops commands until one returns', () => {
-    const myCmd = stub().returnsArg(0);
-    const uncalledCmd = spy();
+function noop() {}
+
+describe('dispatch-fn', function() {
+  it('should return a function which loops commands until one returns', function() {
+    var myCmd = sinon.stub().returnsArg(0);
+    const uncalledCmd = sinon.spy();
     const fn = dispatch(noop, noop, myCmd, uncalledCmd);
     const result = fn('foo', 'bar');
 
