@@ -1,5 +1,5 @@
 var _ = require('lodash');
-var dispatch = require('../es5');
+var dispatch = require('../');
 
 function fail(thing) { throw new Error(thing); }
 

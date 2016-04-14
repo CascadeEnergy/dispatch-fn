@@ -2,7 +2,6 @@
 
 > Functional Programming Dispatch
 
-
 ## Install
 
 ```
